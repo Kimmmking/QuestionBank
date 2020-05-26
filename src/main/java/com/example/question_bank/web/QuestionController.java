@@ -85,13 +85,13 @@ public class QuestionController {
         return questionService.get(qid);
     }
 
-    @GetMapping("excercises/{uid}/questionsinfo")
+    @GetMapping("/excercises/{uid}/questionsinfo")
     public List<Question> get4exercise(@PathVariable(name = "uid") int uid) throws Exception{
         return questionService.listexcersice(uid);
     }
 
-//    搜索量 +1  && 加入到用户足迹
-    @PostMapping("questions/searched/{qid}")
+//   加入到搜索记录
+    @PostMapping("/questions/searched/{qid}")
     public Object updateSearched(@PathVariable(name = "qid") int qid, HttpSession session) throws Exception{
         if(questionService.get(qid) != null){
 
@@ -167,7 +167,7 @@ public class QuestionController {
     }
 
 //    用户评分
-    @PostMapping("questions/evaluate/{qid}")
+    @PostMapping("/questions/evaluate/{qid}")
     public Object evaluate(@PathVariable(name = "qid") int qid, HttpServletRequest request) throws Exception {
         String score = request.getParameter("score");
         questionService.questionsave(qid,Double.parseDouble(score));
@@ -177,7 +177,7 @@ public class QuestionController {
     }
 
 //    搜索扩展
-    @GetMapping("questions/expand")
+    @GetMapping("/questions/expand")
     public List<Question> expand(String keyString){
 //        搜索扩展
         List<Question> questions = questionService.searchQuestionDetail(keyString);

@@ -61,4 +61,9 @@ public class ForePageController {
         return "fore/rankinglist";
     }
 
+    @GetMapping(value = "/recommend")
+    public String recommend(){
+        return "fore/recommend";
+    }
+
 }

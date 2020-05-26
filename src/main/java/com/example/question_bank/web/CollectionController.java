@@ -23,7 +23,7 @@ public class CollectionController {
     QuestionService questionService;
 
 
-    @GetMapping("collections")
+    @GetMapping("/collections")
     public Object collection(HttpSession session){
         User user =(User) session.getAttribute("user");
         List<Collection> collections = collectionService.listByUser(user);
@@ -35,7 +35,7 @@ public class CollectionController {
         return questions;
     }
 
-    @PostMapping("collections")
+    @PostMapping("/collections")
     public Object add(int qid, HttpSession session) throws Exception {
         User user = (User) session.getAttribute("user");
         List<Collection> collections = collectionService.listByUser(user);
@@ -57,7 +57,7 @@ public class CollectionController {
         return Result.success();
     }
 
-    @DeleteMapping("collections/{qid}")
+    @DeleteMapping("/collections/{qid}")
     public Object delete(@PathVariable(name = "qid") int qid, HttpSession session) throws Exception{
         User user = (User)session.getAttribute("user");
         Question question = questionService.get(qid);

@@ -90,53 +90,51 @@ public class ForeRESTController {
             return Result.fail("未登录");
     }
 
-    @GetMapping("foresearch")
-    public List<Question> search(@RequestParam(name = "keyword") String keyword, HttpServletRequest request) throws IOException {
+    @GetMapping("/foresearch")
+    public List<Question> search(@RequestParam(name = "keyword") String keyword) throws IOException {
         if(null == keyword){
             return new ArrayList<>();
         }
 
-        List<Question> questions_ = questionService.searchQuestionDetail(keyword);
-
-        List<String> words = splitWords(keyword.toLowerCase());
-        System.out.println(words);
+        //        List<String> words = splitWords(keyword.toLowerCase());
+//        System.out.println(words);
 
 //        遍历热词库，若该热词存在，数据库中searchtimes字段+1
-        if (!words.isEmpty()){
-            for (String word : words){
-                if(hotWordService.exitByHotWord(word)){
-                    HotWord hotWord = hotWordService.get(word);
-                    int searchtimes = hotWord.getSearchtimes() + 1;
-                    hotWord.setSearchtimes(searchtimes);
-                    hotWordService.save(hotWord);
-                }else {
-                    words.remove(word);
-                }
-            }
+//        if (!words.isEmpty()){
+//            for (String word : words){
+//                if(hotWordService.exitByHotWord(word)){
+//                    HotWord hotWord = hotWordService.get(word);
+//                    int searchtimes = hotWord.getSearchtimes() + 1;
+//                    hotWord.setSearchtimes(searchtimes);
+//                    hotWordService.save(hotWord);
+//                }else {
+//                    words.remove(word);
+//                }
+//            }
 
             //        遍历题库，计算每道题含有多少个关键词
-            List<Question> questions = questionService.getAll();
-            for (Question question : questions){
-                int count = 0;
-                for (String word : words){
-                    if (question.getDetailquestion().toLowerCase().contains(word)){
-                        count++;
-                    }
-                }
-                question.setContainHotwords(count);
-            }
-            questions.sort(Question::compareTo);
+//            List<Question> questions = questionService.getAll();
+//            for (Question question : questions){
+//                int count = 0;
+//                for (String word : words){
+//                    if (question.getDetailquestion().toLowerCase().contains(word)){
+//                        count++;
+//                    }
+//                }
+//                question.setContainHotwords(count);
+//            }
+//            questions.sort(Question::compareTo);
+//
+//            for (Question question : questions){
+//                System.out.println(questions_.size() + " " + questions_.contains(question));
+//                if (questions_.size() >= 10 || 0 == question.getContainHotwords()) break;
+//                if (!questions_.contains(question)){
+//                    questions_.add(question);
+//                }
+//            }
+//        }
 
-            for (Question question : questions){
-                System.out.println(questions_.size() + " " + questions_.contains(question));
-                if (questions_.size() >= 10 || 0 == question.getContainHotwords()) break;
-                if (!questions_.contains(question)){
-                    questions_.add(question);
-                }
-            }
-        }
-
-        return questions_;
+        return questionService.searchQuestionDetail(keyword);
     }
 
 }

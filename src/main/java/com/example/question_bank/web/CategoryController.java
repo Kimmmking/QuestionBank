@@ -15,7 +15,8 @@ public class CategoryController {
     CategoryService categoryService;
 
     @GetMapping("/categories")
-    public Page4Navigator<Category> list(@RequestParam(value = "start", defaultValue = "0") int start, @RequestParam(value = "size", defaultValue = "10") int size) throws Exception {
+    public Page4Navigator<Category> list(@RequestParam(value = "start", defaultValue = "0") int start,
+                                         @RequestParam(value = "size", defaultValue = "10") int size) throws Exception {
         start = start < 0 ? 0 : start;
         return categoryService.list(start, size, 6);
     }

@@ -1,10 +1,16 @@
 <div class="topper" th:fragment="html" xmlns:th="http://www.w3.org/1999/xhtml">
-    <span class="top-welcome"><a href="home">喵，欢迎来到 计算机网络 大题库</a></span>
+<!--    <span class="top-welcome"><a href="home">喵，欢迎来到 计算机网络 大题库</a></span>-->
     <ul th:if="${null == session.user}" class="check-list">
         <li><a href="login">请登录</a></li>
         <li><a href="register">免费注册</a></li>
     </ul>
     <ul class="choices-list">
+        <li>
+            <a href="home">首页</a>
+        </li>
+        <li>
+            <a href="recommend">网课推荐</a>
+        </li>
         <li>
             <a href="collection">我的收藏夹</a>
         </li>
@@ -16,6 +22,9 @@
         </li>
         <li>
             <a href="exercise">我要刷题 ×</a>
+        </li>
+        <li>
+            <a href="http://47.115.24.41:9654/adminlogin" style="color: #66afe9">管理员入口</a>
         </li>
         <li>
             <span th:if="${null != session.user}">

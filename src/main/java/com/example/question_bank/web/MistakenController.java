@@ -20,7 +20,7 @@ public class MistakenController {
     @Autowired
     QuestionService questionService;
 
-    @PostMapping("mistakens")
+    @PostMapping("/mistakens")
     public Object add(int qid, HttpSession session){
         User user = (User)session.getAttribute("user");
         List<Mistaken> mistakens = mistakenService.listByUser(user);
@@ -42,7 +42,7 @@ public class MistakenController {
         return Result.success();
     }
 
-    @PostMapping("mistakens/list")
+    @PostMapping("/mistakens/list")
     public Object addList(@RequestBody Integer[] wrongQuestion,HttpSession session){
         User user = (User) session.getAttribute("user");
         List<Mistaken> mistakens = mistakenService.listByUser(user);
@@ -67,7 +67,7 @@ public class MistakenController {
         return Result.success();
     }
 
-    @GetMapping("mistakens")
+    @GetMapping("/mistakens")
     public Object collection(HttpSession session){
         User user =(User) session.getAttribute("user");
         List<Mistaken> mistakens = mistakenService.listByUser(user);
@@ -79,7 +79,7 @@ public class MistakenController {
         return questions;
     }
 
-    @DeleteMapping("mistakens/{qid}")
+    @DeleteMapping("/mistakens/{qid}")
     public Object delete(@PathVariable(name = "qid") int qid, HttpSession session) throws Exception{
         User user = (User)session.getAttribute("user");
         Question question = questionService.get(qid);

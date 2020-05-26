@@ -17,7 +17,7 @@ public class RankingListController {
     @Autowired
     RankingListService rankingListService;
 
-    @PostMapping("exercises/result")
+    @PostMapping("/exercises/result")
     public Object add(@RequestBody RankingList rankingList, HttpSession session){
         User user = (User) session.getAttribute("user");
         rankingList.setUser(user);
@@ -25,7 +25,7 @@ public class RankingListController {
         return Result.success();
     }
 
-    @GetMapping("rankinglist/{unitid}")
+    @GetMapping("/rankinglist/{unitid}")
     public List<RankingList> list(@PathVariable(name = "unitid") int unitid){
         return rankingListService.list(unitid);
     }

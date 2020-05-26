@@ -34,7 +34,7 @@ public class HotWordController {
     @Autowired
     UnitService unitService;
 
-    @GetMapping("hotwords")
+    @GetMapping("/hotwords")
     public List<HotWord> sortBySearchtimes(){
         int hotwordNum = 0;
         List<HotWord> hotWords = hotWordService.sortBySearchtimes();

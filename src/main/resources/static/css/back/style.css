@@ -4,6 +4,8 @@
 .topper{
     width: 100%;
     height: 40px;
+    background-color: #cccccc;
+    color: #3c3c3c;
 }
 
 .topper .top-welcome{
@@ -25,40 +27,40 @@
     line-height: 40px;
 }
 
-.topper .choices-list li:nth-child(1):before{
-    display: inline-block;
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255,0,0,0.6);
-    border-radius: 50%;
-}
+/*.topper .choices-list li:nth-child(1):before{*/
+/*    display: inline-block;*/
+/*    content: "";*/
+/*    width: 10px;*/
+/*    height: 10px;*/
+/*    background-color: rgba(255,0,0,0.6);*/
+/*    border-radius: 50%;*/
+/*}*/
 
-.topper .choices-list li:nth-child(2):before{
-    display: inline-block;
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255,231,18,0.8);
-    border-radius: 50%;
-}
+/*.topper .choices-list li:nth-child(2):before{*/
+/*    display: inline-block;*/
+/*    content: "";*/
+/*    width: 10px;*/
+/*    height: 10px;*/
+/*    background-color: rgba(255,231,18,0.8);*/
+/*    border-radius: 50%;*/
+/*}*/
 
-.topper .choices-list li:nth-child(3):before{
-    display: inline-block;
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: rgba(0,255,100,0.6);
-    border-radius: 50%;
-}
-.topper .choices-list li:nth-child(4):before{
-    display: inline-block;
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: rgba(0,160,255,0.6);
-    border-radius: 50%;
-}
+/*.topper .choices-list li:nth-child(3):before{*/
+/*    display: inline-block;*/
+/*    content: "";*/
+/*    width: 10px;*/
+/*    height: 10px;*/
+/*    background-color: rgba(0,255,100,0.6);*/
+/*    border-radius: 50%;*/
+/*}*/
+/*.topper .choices-list li:nth-child(4):before{*/
+/*    display: inline-block;*/
+/*    content: "";*/
+/*    width: 10px;*/
+/*    height: 10px;*/
+/*    background-color: rgba(0,160,255,0.6);*/
+/*    border-radius: 50%;*/
+/*}*/
 
 /* login.html */
 .errorMessage{
@@ -75,16 +77,16 @@
 }
 
 .purple-a{
-    color: rgb(235,211,180);
+    color: rgba(0,0,255,0.6);
 }
 
 .purple-a:hover{
-    color: rgb(235,211,180);
+    color: rgba(0,0,255,0.6);
 }
 
 .title-purple{
     font-weight: bolder;
-    color: rgb(235,211,180);
+    color: rgba(0,0,255,0.6);
 }
 
 .card-wrapper {
@@ -94,7 +96,7 @@
 
 .card {
     border-color: transparent;
-    box-shadow: 0 4px 20px rgba(235,211,180,0.5);
+    box-shadow: 0 4px 20px #cccccc;
     z-index: 2;
 }
 
@@ -120,15 +122,15 @@
 
 .btn.btn-purple{
     border-radius: 8px;
-    background-color: rgb(235,211,180);
-    border-color: rgb(235,211,180);
+    background-color: rgba(0,0,255,0.6);
+    border-color: rgba(0,0,255,0.6);
     opacity: 0.95;
     transition: .3s;
 }
 
 .btn.btn-purple:hover{
-    background-color: rgba(235,211,180,0.5);
-    border-color: rgba(235,211,180,0.5);
+    background-color: rgba(0,0,255,0.5);
+    border-color: rgba(0,0,255,0.5);
     opacity: 0.85;
 }
 

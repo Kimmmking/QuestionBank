@@ -166,15 +166,8 @@
 
     <div th:replace="include/fore_/modal4login::html"></div>
 
-    <!--        显示热词-->
-    <div class="hotwordDIV">
-        <div class="cube">
-            <div class="small" v-for="h in hotwords">{{h.hotword}}</div>
-        </div>
-    </div>
-
     <div class="searchArea">
-        <img th:src="@{/img/logo.png}" alt="" src="img/logo.png">
+        <img th:src="@{/img/logo.png}" alt="" src="img/logo.png" class="logo">
 
         <input class="searchInput" name="keyword" type="text" list="expand" v-on:input="expandSearch()">
         <datalist id="expand">
